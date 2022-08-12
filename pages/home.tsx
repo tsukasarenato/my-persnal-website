@@ -3,9 +3,9 @@ import Footer from '../components/footer'
 import HeadCustom from '../components/head'
 import MenuBar from '../components/menubar'
 
-const About: NextPage = () => {
+const Home: NextPage = () => {
   
-  const page = "/about"
+  const page = "/home"
 
   return (
     <>
@@ -17,4 +17,4 @@ const About: NextPage = () => {
   )
 }
 
-export default About
+export default Home

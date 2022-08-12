@@ -1,7 +1,7 @@
+import { NextPage } from "next";
 import Head from "next/head";
 
-
-const HeadCustom = () => {
+const HeadCustom: NextPage = () => {
     return (
         <Head>
             <title>Tsukasa Renato</title>

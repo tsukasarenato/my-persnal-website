@@ -1,20 +1,17 @@
-import type { NextPage } from 'next'
-import HeadCustom from '../components/head'
-import NavBar, { NavActived } from '../components/navbar'
-import Footer from '../components/footer'
+import { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { getLocale } from '../utils/language'
 
-const Home: NextPage = () => {
+const Index: NextPage = () => {
+
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push("/home", "/home", { locale: getLocale() })
+  }, [])
   
-  const actived: NavActived = {menu: "Home", language: "English"}
-
-  return (
-    <>
-      <HeadCustom />
-      <NavBar {...actived} />
-      <h1 className="text-3xl font-bold underline">Content</h1>
-      <Footer />
-    </>
-  )
+  return (<></>)
 }
 
-export default Home
+export default Index
