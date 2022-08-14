@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import Footer from '../components/footer'
 import HeadCustom from '../components/head'
-import MenuBar from '../components/menubar'
+import Menu from '../components/menu/menu'
 
 const Home: NextPage = () => {
   
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <>
       <HeadCustom />
-      <MenuBar page={page} />
+      <Menu page={page} />
       <h1 className="text-3xl font-bold underline">Content</h1>
       <Footer />
     </>
