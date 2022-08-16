@@ -10,9 +10,13 @@ const About: NextPage = () => {
   return (
     <>
       <HeadCustom />
-      <Menu page={page} />
-      <h1 className="text-3xl font-bold underline">Content</h1>
-      <Footer />
+      <div className="relative min-h-screen min-w-full">
+        <Menu page={page} />
+        <div className="pb-28">
+          <h1 className="text-3xl font-bold underline">Content</h1>
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }
