@@ -1,7 +1,7 @@
 import MenuLinks from "./links"
 import { MenuPropsArray } from "./menu"
 
-const MenuLaptop = ({menus, languages}: MenuPropsArray) => {
+const LaptopMenu = ({menus, languages}: MenuPropsArray) => {
 
     return (
         <div className="grid grid-cols-2 gap-4 bg-blue-500">
@@ -22,4 +22,4 @@ const MenuLaptop = ({menus, languages}: MenuPropsArray) => {
     )
 }
 
-export default MenuLaptop
+export default LaptopMenu

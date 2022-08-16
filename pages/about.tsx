@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import Footer from '../components/footer'
+import Footer from '../components/footer/footer'
 import HeadCustom from '../components/head'
 import Menu from '../components/menu/menu'
 

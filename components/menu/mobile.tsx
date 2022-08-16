@@ -6,7 +6,7 @@ type MenuPropsArray = {
     languages: MenuProps[]
 }
 
-const MenuMobile = ({menus, languages}: MenuPropsArray) => {
+const MobileMenu = ({menus, languages}: MenuPropsArray) => {
 
     const [open, setOpen] = useState<boolean>(false)
 
@@ -36,6 +36,7 @@ const MenuMobile = ({menus, languages}: MenuPropsArray) => {
                     {languages.map((value) => (
                         <MenuLinks {...value} key={value.label} />
                     ))}
+                    <div className="pb-44"></div>
                     </>
                 }
                 
@@ -43,4 +44,4 @@ const MenuMobile = ({menus, languages}: MenuPropsArray) => {
     )
 }
 
-export default MenuMobile
+export default MobileMenu
