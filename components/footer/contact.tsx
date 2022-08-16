@@ -1,10 +1,10 @@
-import { NextPage } from "next"
- 
-const Contact: NextPage = () => {
+import { FooterProps } from "./footer"
+
+ const Contact = ({ titles }: FooterProps) => {
     return (
         <>
             <div className="flex justify-center mb-2">
-                <h1>Contact me &#129303;</h1>
+                <h1>{titles} &#129303;</h1>
             </div>
             <div className="flex justify-center mb-2">
                 <i className="material-icons">mail</i>

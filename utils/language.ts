@@ -19,3 +19,9 @@ export const getMenuLabels = (language?: string) => {
       {name: 'Posts', page: '/posts'}
     ]
 }
+
+export const getFooterLabels = (language?: string) => {
+  if (language == 'pt')
+    return ["Minhas mídias sociais", "Meu portfolio", "Contate-me"]
+  return ["My social medias", "My portfolio", "Contact me"]
+}

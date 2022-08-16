@@ -1,14 +1,15 @@
-
-import { NextPage } from "next"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { useMobileFooter } from "../../utils/breakpoints"
-import Contact from "./contact"
+import { getFooterLabels } from "../../utils/language"
 import LaptopFooter from "./laptop"
 import MobileFooter from "./mobile"
-import Portfolio from "./portfolio"
-import SocialMedias from "./socialmedias"
 
-const Footer: NextPage = () => {
+export type FooterProps = {
+    titles: string[] | string
+}
+
+const Footer = () => {
 
     const [mobile, setMobile] = useState(false)
 
@@ -21,12 +22,15 @@ const Footer: NextPage = () => {
         window.addEventListener('resize', handleResize)
     },[])
 
+    const { locale } = useRouter()
+    const labels = getFooterLabels(locale)
+
     return (
         <>
         { mobile ?
-            <MobileFooter />
+            <MobileFooter titles={labels} />
           :
-            <LaptopFooter />
+            <LaptopFooter titles={labels} />
         }
         </>
     )
