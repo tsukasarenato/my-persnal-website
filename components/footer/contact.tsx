@@ -12,7 +12,7 @@ import { FooterProps } from "./footer"
             </div>
             <a href="https://api.WhatsApp.com/send?phone=5514997468186" target="_blank" className="flex justify-center">
                 <i className="fa fa-whatsapp bg-green-500 hover:bg-opacity-75 p-2 mb-2 rounded-full w-8 h-8 text-center"></i>
-                <p className="ml-2">14 997468186</p>
+                <p className="ml-2 hover:text-slate-400">14 997468186</p>
             </a>
         </>
     )
