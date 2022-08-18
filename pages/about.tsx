@@ -1,24 +1,23 @@
 import { NextPage } from 'next'
+import About from '../components/about/about'
 import Footer from '../components/footer/footer'
 import HeadCustom from '../components/head'
 import Menu from '../components/menu/menu'
 
-const About: NextPage = () => {
+const AboutPage: NextPage = () => {
   
-  const page = "/about"
+  const page = '/about'
 
   return (
     <>
       <HeadCustom />
-      <div className="relative min-h-screen min-w-full">
+      <div className='relative min-h-screen min-w-full'>
         <Menu page={page} />
-        <div className="pb-28">
-          <h1 className="text-3xl font-bold underline">Content</h1>
-        </div>
+        <About />
         <Footer />
       </div>
     </>
   )
 }
 
-export default About
+export default AboutPage
