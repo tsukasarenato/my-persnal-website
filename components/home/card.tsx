@@ -8,12 +8,12 @@ type HomeCardProps = {
 const HomeCard = ({ image, title }: HomeCardProps) => {
   
   return (
-    <a href='#' className='container col-span-1 hover:text-zinc-600'>
+    <a href='#' className='container sm:col-span-1 hover:text-zinc-600'>
         <div className='flex justify-center'>
             <Image src={image} alt='Politician' />
         </div>
         <div className='flex justify-center'>
-            <h1 className='text-lg font-medium'>{title}</h1>
+            <h1 className='text-lg font-medium text-center'>{title}</h1>
         </div>
     </a>
   )
