@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { useMobileFooter } from "../../utils/breakpoints"
+import { isMobile } from "../../utils/breakpoints"
 import { getFooterLabels } from "../../utils/translator"
 import LaptopFooter from "./laptop"
 import MobileFooter from "./mobile"
@@ -14,11 +14,11 @@ const Footer = () => {
     const [mobile, setMobile] = useState(false)
 
     const handleResize = () => {
-        setMobile(useMobileFooter())
+        setMobile(isMobile())
     }
 
     useEffect(() => {
-        setMobile(useMobileFooter())
+        setMobile(isMobile())
         window.addEventListener('resize', handleResize)
     },[])
 

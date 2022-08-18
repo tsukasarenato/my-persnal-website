@@ -1,8 +1,4 @@
 
-export const useMobileMenu = () => {
-    return window.innerWidth < 500;
-}
-
-export const useMobileFooter = () => {
+export const isMobile = () => {
     return window.innerWidth < 600;
 }

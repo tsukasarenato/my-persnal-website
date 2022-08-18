@@ -11,7 +11,7 @@ const Welcome = ({ message }: WelcomeProps) => {
         <div className='flex flex-col sm:grid sm:grid-cols-5'>
             <div className='flex justify-center'>
                 <div className='h-28 w-28 mt-4'>
-                    <Image src={profile} alt='Pictore of author' className='rounded-full' />
+                    <Image src={profile} alt='Picture of author' className='rounded-full' />
                 </div>
             </div>
             <div className='sm:container sm:col-span-4 mt-8'>

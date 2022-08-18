@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { useMobileMenu } from "../../utils/breakpoints"
+import { isMobile } from "../../utils/breakpoints"
 import { getMenuLabels } from "../../utils/translator"
 import LaptopMenu from "./laptop"
 import { MenuProps } from "./links"
@@ -18,13 +18,15 @@ export type MenuPropsArray = {
 const Menu = ({page}: CurrentPage) => {
 
     const [mobile, setMobile] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
 
     const handleResize = () => {
-        setMobile(useMobileMenu())
+        setMobile(isMobile())
     }
 
     useEffect(() => {
-        setMobile(useMobileMenu())
+        setMobile(isMobile())
+        setLoading(false)
         window.addEventListener('resize', handleResize)
     }, [])
 
@@ -42,11 +44,19 @@ const Menu = ({page}: CurrentPage) => {
 
     return (
         <>
-        { mobile ?
-            <MobileMenu menus={menus} languages={languages} />
+            { loading ?
+                <div className="grid grid-rows-1 bg-blue-500">
+                    <h1 className="p-4 font-sans text-white text-lg font-medium">...</h1>
+                </div>
             :
-            <LaptopMenu menus={menus} languages={languages} />
-        }
+            <>
+                { mobile ?
+                <MobileMenu menus={menus} languages={languages} />
+                :
+                <LaptopMenu menus={menus} languages={languages} />
+                }
+            </>
+            }
         </>
     )
 
