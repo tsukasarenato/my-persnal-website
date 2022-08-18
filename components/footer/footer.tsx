@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { useMobileFooter } from "../../utils/breakpoints"
-import { getFooterLabels } from "../../utils/language"
+import { getFooterLabels } from "../../utils/translator"
 import LaptopFooter from "./laptop"
 import MobileFooter from "./mobile"
 

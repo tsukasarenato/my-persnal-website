@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { useMobileMenu } from "../../utils/breakpoints"
-import { getMenuLabels } from "../../utils/language"
+import { getMenuLabels } from "../../utils/translator"
 import LaptopMenu from "./laptop"
 import { MenuProps } from "./links"
 import MobileMenu from "./mobile"
