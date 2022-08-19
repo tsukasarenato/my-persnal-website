@@ -11,7 +11,7 @@ const AboutImages = () => {
   return (
     <>
         {images.map((image, index) => (
-            <div className='flex justify-center h-72'>
+            <div className='flex justify-center h-72' key={index}>
                 <Image src={image} alt={'Me ' + index} />
             </div>
         ))}
