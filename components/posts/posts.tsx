@@ -4,8 +4,9 @@ import { getPostsText } from "./content"
 
 const Posts = () => {
 
-  const posts = getPostsText()
   const { locale } = useRouter()
+  const posts = getPostsText(locale)
+  
   
   return (
     <div className="container mx-auto">

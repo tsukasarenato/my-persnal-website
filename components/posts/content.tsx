@@ -1,7 +1,38 @@
 import politicianbr from '../../public/politicianbr.jpg'
 import youtube from '../../public/youtube.jpg'
 
-export const getPostsText = () => {
+export const getPostsText = (language?: string) => {
+    
+    if (language == 'pt')
+        return [
+            {
+                title: "Aplicando algoritmos de modelagem de tópicos (LDA) nos discursos dos políticos",
+                text: `Esse foi o primeiro projeto em mineração de dados que trabalhei, o foco era 
+                entender como essas técnicas funcionam. A técnica escolhida para ser implementada 
+                foi a alocação latente de Dirichlet (LDA), essa técnica extrai tópicos de grande 
+                quantidade de textos, tópicos, neste caso, é definido como um conjunto de 
+                palavras-chave como {justiça, segurança, polícia}. Para mostrar uma aplicação real 
+                desta técnica, minha equipe propôs usar os discursos de políticos como amostra. 
+                A amostra foi dividida em duas partes, a primeira intitulada "novos políticos" 
+                representando os novos políticos eleitos com o auxílio das redes sociais, e [...]`,
+                image: politicianbr,
+                page: '/post/topic-modeling'
+            },
+            {
+                title: "Coletando comentários do Youtube usando o Youtube Data API",
+                text: `Neste artigo, mostrarei como usar a API do YouTube para coletar dados de 
+                vídeos e comentários. Hoje em dia, é comum ver análises com dados do Twitter, 
+                desde o GPS ideológico da Folha SP ao projeto Politoscope na França . Eu também 
+                escrevi sobre isso para o EBICC, evento de ciências cognitivas 2019 na Unicamp.
+                Minha experiência na área está mais relacionada à política, mas você pode encontrar
+                 muitos usos para análise de mídias sociais. Na política, é comum usá-los 
+                 para medir intenção de votos, espectro político e para ver estrutura narrativa, 
+                 no meu caso, apliquei o algoritmo LDA nos comentários do Youtube para descobrir 
+                 os tópicos mais [...]`,
+                image: youtube,
+                page: '/post/youtube-data-collector'
+            },    
+        ]
     return [
         {
             title: "Applying topic modeling in politicians' speeches",
