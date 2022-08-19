@@ -13,20 +13,20 @@ type PostsCardProps = {
 }
 
 const PostsCard = ({ title, text, image, locale, page }: PostsCardProps) => {
-  
-    return (
-      <Link href={page} locale={locale}>
-        <a className="flex flex-row space-x-8 h-60 p-2 hover:bg-slate-300">
-          <div className="flex justify-center">
-              <div className="h-72 w-96">
-                  <Image src={image} alt={title} />
-              </div>
-          </div>
-          <PostsText title={title} text={text} />
-        </a>
-      </Link>
-    )
-  }
+
+  return (
+    <Link href={page} locale={locale}>
+      <a className="flex flex-col mx-2 lg:flex-row sm:space-x-8 lg:h-60 lg:p-2 hover:bg-slate-300 overflow-y-hidden">
+        <div className="flex justify-center">
+            <div className="lg:h-72 lg:w-96">
+                <Image src={image} alt={title} />
+            </div>
+        </div>
+        <PostsText title={title} text={text} />
+      </a>
+    </Link>
+  )
+}
   
 export default PostsCard
   

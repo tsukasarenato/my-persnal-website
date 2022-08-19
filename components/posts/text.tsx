@@ -7,12 +7,12 @@ type PostsTextProps = {
 const PostsText = ({title, text}: PostsTextProps) => {
   
     return (
-        <div className="flex flex-col mt-2">
-            <div className="flex justify-start">
-                <h1 className="text-lg font-medium">{title}</h1>
+        <div className="lg:flex lg:flex-col lg:mt-2">
+            <div className="flex justify-center lg:justify-start">
+                <h1 className="text-lg font-medium text-center">{title}</h1>
             </div>
             <div className="flex justify-center mt-4">
-                <p>{text}</p>
+                <p className="text-justify">{text}</p>
             </div>
         </div>
     )
