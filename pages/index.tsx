@@ -5,11 +5,11 @@ import { getNavigatorLanguage } from '../utils/translator'
 
 const Index: NextPage = () => {
 
-  const router = useRouter()
+  const { push } = useRouter()
 
   useEffect(() => {
-    router.push("/home", "/home", { locale: getNavigatorLanguage() })
-  }, [])
+    push("/home", "/home", { locale: getNavigatorLanguage() })
+  }, [push])
   
   return (<></>)
 }
