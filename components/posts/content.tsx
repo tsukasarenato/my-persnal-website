@@ -1,5 +1,5 @@
-import politicianbr from '../public/politicianbr.jpg'
-import youtube from '../public/youtube.jpg'
+import politicianbr from '../../public/politicianbr.jpg'
+import youtube from '../../public/youtube.jpg'
 
 export const getPostsText = () => {
     return [
@@ -12,7 +12,8 @@ export const getPostsText = () => {
                 To show a real application of this technique, my team proposed to use the speeches of politicians as sample. 
                 The sample was divided in two parts, the first entitled "new politicians" representing the 
                 new politicians elected with the help of social media, and the [...]`,
-            image: politicianbr
+            image: politicianbr,
+            page: '/post/topic-modeling'
         },
         {
             title: "Collecting Youtube comments using the Youtube Data API",
@@ -23,8 +24,9 @@ export const getPostsText = () => {
             is more related the politics, but you can find many uses for analysis of social media. 
             In politics, it's common to use them to measure votes' intent, political compass, and 
             to see the narrative structure, in my case, I applied the LDA algorithm on Youtube 
-            comments to discover the topics more spoken during the election 2018. [...]`,
-            image: youtube
+            comments to discover the topics more  [...]`,
+            image: youtube,
+            page: '/post/youtube-data-collector'
         },
     ]
 }

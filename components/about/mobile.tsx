@@ -1,4 +1,4 @@
-import AboutImages from './images'
+import AboutImages from './image'
 import AboutText from './text'
 
 const AboutMobile = () => {

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { aboutText } from '../../utils/about'
+import { aboutText } from './content'
 
 const AboutText = () => {
   
