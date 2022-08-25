@@ -202,6 +202,114 @@ const post = {
     }
 ]}
 
-export const getTopicModelingPart1 = () => {
+const post_pt = {
+    title: "Aplicando algoritmos de modelagem de tópicos nos discursos dos políticos - Parte 1",
+    image: politician,
+    content:
+    [{
+        subtitle: 'Sobre esse projeto',
+        paragraphs: [
+            {p: `Esse foi o primeiro projeto em mineração de dados que trabalhei, o foco era entender como 
+            essas técnicas funcionam. A técnica escolhida para ser implementada foi a alocação latente de 
+            Dirichlet (LDA), essa técnica extrai tópicos de grande quantidade de textos, tópicos, neste 
+            caso, é definido como um conjunto de palavras-chave como {justiça, segurança, polícia}.`},
+            {p:`Para mostrar uma aplicação real desta técnica, minha equipe propôs usar os discursos de 
+            políticos como amostra. A amostra foi dividida em duas partes, a primeira intitulada "novos 
+            políticos" representando os novos políticos eleitos com o auxílio das redes sociais, e a 
+            segunda intitulada "antigos políticos" representando os antigos políticos que não foram 
+            reeleitos, ambos são de direita.`},
+            {p: `A ideia era verificar se os tópicos de cada amostra são iguais se os tópicos são iguais 
+            então as ideias não mudaram, o que mudou foi a forma de comunicar, se os tópicos são diferentes 
+            então abre espaço para outras hipóteses. Este projeto atualmente não está sendo trabalhado, há 
+            outro projeto em andamento, por isso decidi escrever sobre este projeto aqui e utilizá-lo para 
+            trazer conhecimento sobre o algoritmo de modelagem de tópicos. Nosso foco está no algoritmo.`}]
+    },
+    {
+        subtitle: 'As ferramentas e bibliotecas usadas',
+        paragraphs: [
+            {p: `O algoritmo que implementei tem basicamente as seguintes etapas, preparação de dados e 
+            criação do modelo LDA. A preparação de dados envolve tokenização, remoção de palavras 
+            irrelevantes (stopwords), lematização e n_grams, e a criação do modelo LDA envolve criar 
+            um dicionário, um corpus e o modelo LDA propriamente dito.`},
+            {p: `Para implementar este algoritmo foi utilizado a linguagem Python e as seguintes 
+            bibliotecas, o Gensim para criar o modelo LDA e os n_grams, o Pandas para ler arquivos 
+            JSON, o simple_process do Gensim para tokenização, o NLTK para remoção de stopwords, e o 
+            Spacy para lematização.`},
+            {code: codes[0]},
+            {p: `Para gerenciar as bibliotecas foi usado o ambiente de desenvolvimento Pycharm e o projeto de código aberto Anaconda.`},
+            {p: `Os códigos são inspirado nesse tutorial: 
+            https://www.machinelearningplus.com/nlp/topic-modeling-gensim-python/. Eu adaptei e organizei o 
+            código para este estudo de caso, então o código está um pouco diferente do tutorial.`}
+        ]
+    },
+    {
+        subtitle: 'Sobre as amostras',
+        paragraphs: [
+            {p: `Os discursos dos políticos foram coletados no site da Câmara dos Deputados, basicamente, 
+            pesquisei o nome do candidato no site e copiei e colei seus discursos em um arquivo externo 
+            usando o mouse, depois coloquei os dados em um formato JSON usando o Notepad++.`},
+            {p: `O arquivo JSON usado nesse projeto pode ser acessado neste link.`},
+            {p: `Independentemente do formato ou dos dados que deseja usar, é necessário converter esse 
+            arquivo em uma lista de strings. Portanto, se você quiser usar esse algoritmo em outros estudos 
+            de caso, lembre-se de fazer as adaptações necessárias.`}
+        ]
+    },
+    {
+        subtitle: 'Explicando cada passo da preparação de dados',
+        paragraphs: [
+            {p: `Para entendermos melhor as etapas de preparação dos dados, eu criei um diálogo fictício 
+            entre duas pessoas e salvei em uma variável de lista de strings.`},
+            {code: codes[1]},
+            {p: `A primeira etapa é a tokenização, nesta etapa, a lista de strings é transformada em um array de strings, 
+            também são removidos números, pontuação e letras isoladas.`},
+            {code: codes[2]},
+            {p: `Em modelagem de tópico é comum ouvir os termos, palavras, documentos, e corpus, onde 
+            documentos é um conjunto de palavras e corpus um conjunto de documentos. Para o algoritmo, 
+            cada elemento da matriz é uma palavra, cada linha da matriz é um documento e a matriz é o 
+            corpus.`},
+            {p: `O segundo passo é a remoção das stopwords, stopwords são palavras comuns da linguagem e não 
+            têm significado relevante para a formação dos tópicos. Se você não remover as palavras irrelevantes, 
+            o algoritmo considerará essas palavras para formar os tópicos, então em vez de {lei, polícia, justiça}
+             o algoritmo pode retornar {as, para, justiça}. Após a remoção das stopwords, o resultado foi:`},
+            {code: codes[3]},
+            {p: `As seguintes palavras foram removidas: ‘meu’, ‘aquela’, ‘que’, ‘para’, ‘ele’, ‘muito’, 
+            ‘qual’, ‘do’, ‘eu’, ‘dele’, ‘nas’, ‘você’, ‘no’, ‘meu’, ‘estava’, ‘pelas’, ‘também’, ‘um’, 
+            ‘ou’, ‘aquele’, ‘com’, ‘de’. O próximo passo é a lematização, observe o resultado abaixo:`},
+            {code: codes[4]},
+            {p: `A lematização transforma a palavra em sua "versão raiz", então palavras como 'engordou' se 
+            tornam 'engordar' e 'quilos' se tornam 'quilo'. O Spacy usa modelos estatísticos para descobrir 
+            se uma palavra é um verbo ou um substantivo, então em alguns casos, eles falham, neste caso, o 
+            Spacy pensa que a palavra 'barato' é um verbo, por isso 'barato' torne-se 'baratar'. Esta etapa 
+            é importante porque o algoritmo analisa apenas a sintaxe, não a semântica, então por exemplo, 
+            as palavras cachorro e cachorros têm o mesmo significado, porém, a sintaxe é diferente, então 
+            o algoritmo entende isso como duas palavras com um significado diferente.`},
+            {p: `A próximo passo é o n_gram, nesta etapa, palavras que muitas vezes aparecem juntas são 
+            conectadas com um underline, por exemplo, mídia social torna-se mídia_social, então o algoritmo 
+            entende mídia social como uma palavra com o mesmo significado em vez de duas palavras com 
+            significado diferente. Este passo é importante pelo mesmo motivo que a lematização.`},
+            {code: codes[5]},
+            {p: `O n_gram possui dois métodos para conectar as palavras que aparecem frequentemente juntas, 
+            o primeiro e o que estamos usando é o 'original_score', o segundo é 'npmi_score', esses métodos 
+            calculam a pontuação entre duas palavras, com base nessa pontuação o algoritmo conecta as 
+            palavras. Cada método recebe parâmetros, alterando os valores desses parâmetros pode gerar 
+            resultados diferentes, neste caso, usei min_count = 2 e threshold = 10.`}
+        ]
+    },
+    {
+        subtitle: 'Criando um dicionário e um corpus',
+        paragraphs: [
+            {p: `Agora com os dados prontos, vamos criar um dicionário, ou seja, vamos atribuir um 
+            identificador (número) para a palavra, logo em seguida vamos criar um corpus, esse corpus 
+            contém a palavra e a quantidade de vezes que ela aparece no documento, veja o exemplo abaixo.`},
+            {code: codes[6]},
+            {p: `Lembre-se de que cada linha da matriz é um documento.`},
+            {code: codes[7]}
+        ]
+    }
+]}
+
+export const getTopicModelingPart1 = (language?: string) => {
+    if (language == 'pt')
+        return post_pt
     return post
 }

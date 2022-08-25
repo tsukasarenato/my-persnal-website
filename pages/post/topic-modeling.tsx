@@ -4,12 +4,15 @@ import HeadCustom from '../../components/head'
 import Menu from '../../components/menu/menu'
 import Post from '../../components/post/post'
 import { getTopicModelingPart1 } from '../../components/post/content/topic-modeling-part-1'
+import { useRouter } from 'next/router'
 
 const TopicModelingPage: NextPage = () => {
   
   const page = "/posts"
 
-  const post = getTopicModelingPart1()
+  const { locale } = useRouter()
+
+  const post = getTopicModelingPart1(locale)
 
   return (
     <>
