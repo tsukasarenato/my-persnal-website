@@ -8,7 +8,7 @@ import Post from '../../components/post/post'
 
 const YoutubeDataCollectorPage: NextPage = () => {
   
-  const page = "/posts"
+  const page = "/post/youtube-data-collector"
 
   const { locale } = useRouter()
 

@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 const TopicModelingPage: NextPage = () => {
   
-  const page = "/posts"
+  const page = "/post/topic-modeling"
 
   const { locale } = useRouter()
 
