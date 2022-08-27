@@ -5,10 +5,7 @@ type PostProps = {
   image: StaticImageData,
   content: {
     subtitle: string, 
-    paragraphs: {
-      p?: string, 
-      code?: string
-    }[]
+    paragraphs:  (JSX.Element | string)[]
   }[]
 }
 
@@ -30,13 +27,13 @@ const Post = ({title, image, content} : PostProps) => {
             </div>
             {content.paragraphs.map(paragraph => (
                 <>
-                {paragraph.p ?
-                  <div className='flex justify-start'>
-                    <p className='text-justify'>{ paragraph.p }</p>
+                {typeof paragraph === 'string' ?
+                  <div className='flex justify-start bg-slate-200 p-4'>
+                    <p className='whitespace-pre-wrap break-all'>{ paragraph }</p>
                   </div>
                 :
-                  <div className='flex justify-start bg-slate-200 p-4'>
-                    <p className='whitespace-pre-wrap break-all'>{ paragraph.code }</p>
+                  <div className='flex justify-start'>
+                    <p className='text-justify'>{ paragraph }</p>
                   </div>
                 }
                 </>
