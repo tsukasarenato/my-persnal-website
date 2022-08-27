@@ -1,4 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
+import Link from 'next/link'
+import { Pagination } from './pagination'
 
 type PostProps = {
   title: string,
@@ -6,10 +8,13 @@ type PostProps = {
   content: {
     subtitle: string, 
     paragraphs:  (JSX.Element | string)[]
-  }[]
+  }[],
+  locale?: string,
+  next: string,
+  previous: string
 }
 
-const Post = ({title, image, content} : PostProps) => {
+const Post = ({title, image, content, locale, next, previous} : PostProps) => {
 
   return (
     <div className='container mx-auto pb-96 sm:pb-32'>
@@ -40,6 +45,7 @@ const Post = ({title, image, content} : PostProps) => {
             ))}
             </>
           ))}
+          <Pagination next={next} previous={previous} locale={locale} />
         </div>
     </div>
   )

@@ -10,6 +10,8 @@ const YoutubeDataCollectorPage: NextPage = () => {
   
   const page = "/post/youtube-data-collector"
 
+  const next_page = "/post/youtube-data-collector-part-2"
+
   const { locale } = useRouter()
 
   const post = getYoutubeDataCollectorPart1(locale)
@@ -19,7 +21,8 @@ const YoutubeDataCollectorPage: NextPage = () => {
       <HeadCustom />
       <div className="relative min-h-screen">
         <Menu page={page} />
-        <Post title={post.title} image={post.image} content={post.content} />
+        <Post title={post.title} image={post.image} content={post.content} 
+          locale={locale} previous={page} next={next_page} />
         <Footer />
       </div>
     </>
