@@ -44,6 +44,10 @@ const Menu = ({page}: CurrentPage) => {
 
     return (
         <>
+            <noscript>
+                <LaptopMenu menus={menus} languages={languages} />
+            </noscript>
+
             { loading ?
                 <div className="grid grid-rows-1 bg-blue-500">
                     <h1 className="p-4 font-sans text-white text-lg font-medium">...</h1>
