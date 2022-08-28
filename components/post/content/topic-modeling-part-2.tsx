@@ -29,14 +29,14 @@ const post = {
                 lemmatization - stopwords removal - n_grams - n_grams and stopwords removal. For the 
                 following reasons:</>,
 
-                <>The stopword removal using NLTK analyzes the word's syntax and compares them with the 
+                <>The stopword removal using NLTK analyzes the word&apos;s syntax and compares them with the 
                 words of your stopword dictionary for deciding whether removes or not. As lemmatization 
-                and the n_grams affect the word's syntax and consequently affect the results of the 
+                and the n_grams affect the word&apos;s syntax and consequently affect the results of the 
                 removal I decided to remove the stopwords before them.</>,
 
                 <>I also decided to remove stopwords after lemmatization because the Portuguese 
-                language has many verb conjugations and the NLTK's dictionary doesn't include these 
-                conjugations. Besides that, the NLTK's dictionary has few stopwords, so I added more 
+                language has many verb conjugations and the NLTK&apos;s dictionary doesn&apos;t include these 
+                conjugations. Besides that, the NLTK&apos;s dictionary has few stopwords, so I added more 
                 words to the dictionary.</>,
 
                 <>Finally, I also removed irrelevant words after n_grams, this is a very specific case 
@@ -45,7 +45,7 @@ const post = {
                 research that I was doing, so I removed them after n_grams connected the words with an 
                 underscore (new_york_times).</>,
 
-                <>Another thing about the n_grams that I didn't say is, there are two very common 
+                <>Another thing about the n_grams that I didn&apos;t say is, there are two very common 
                 concepts, the bigram and the trigram, at code level they are the same thing. A bigram 
                 is two words that often appear together in documents, such as social media, New York, 
                 etc., whereas a trigram has the same meaning, but refers to three words.</>,
@@ -54,23 +54,23 @@ const post = {
                 <LinkCustom link='https://radimrehurek.com/gensim/corpora/dictionary.html' text='filter_extremes(),' /> 
                 this filter can be used to 
                 remove words based on the number of times they appear in the documents. In this case, 
-                I used this filter just to test, it'll be useful to help me remove noise from the 
-                collected data from another research I'm doing.</>
+                I used this filter just to test, it&apos;ll be useful to help me remove noise from the 
+                collected data from another research I&apos;m doing.</>
             ]
         },
         {
             subtitle: 'Applying the latent Dirichlet allocation (LDA)',
             paragraphs: [
                 <>So far, I explained how the data preparation works, explained its importance, and the 
-                sequence I chose for this step. Now, I'll show and explain how the LDA algorithm works, 
-                for that I'll use the politicians' speeches as a sample.</>,
+                sequence I chose for this step. Now, I&apos;ll show and explain how the LDA algorithm works, 
+                for that I&apos;ll use the politicians&apos; speeches as a sample.</>,
 
                 <>The following speeches were used:</>,
 
-                <>15 Joyce Hasselmann's speeches in 2019.</>,
-                <>19 Kim Kataguiri's speeches in 2019.</>,
-                <>13 Nelson Marquezelli's speeches in 2018.</>,
-                <>4 Magno Malta's speeches in 2013, 2016, 2018.</>,
+                <>15 Joyce Hasselmann&apos;s speeches in 2019.</>,
+                <>19 Kim Kataguiri&apos;s speeches in 2019.</>,
+                <>13 Nelson Marquezelli&apos;s speeches in 2018.</>,
+                <>4 Magno Malta&apos;s speeches in 2013, 2016, 2018.</>,
                 <>Code used to create the LDA model.</>,
 
                 codes[0]
@@ -102,7 +102,7 @@ const post = {
                 <>The algorithm groups words from documents that have a bigger probability of appearing 
                 together to form the topics. Looking at the tuple list, we can see the first element is 
                 the word and the second element is the probability that the word belongs to the topic, 
-                also note each topic is enumerated, who'll name the topics is the user.</>,
+                also note each topic is enumerated, who&apos;ll name the topics is the user.</>,
 
                 <>To create the LDA model you only need the corpus, about the other parameters used we 
                 have: the id2word used to translate the id of the words, remember that the LDA uses 
@@ -116,7 +116,7 @@ const post = {
                 value.</>,
 
                 <>For the algorithm to be reproducible, you need set the random_state parameter, if you 
-                don't set, the Gensim generates a random number at each run, in other words, generating 
+                don&apos;t set, the Gensim generates a random number at each run, in other words, generating 
                 different topics at each run. Lastly, the chunksize parameter set the number of 
                 documents used in each training chunk, in practice and during my work, I observed that 
                 this parameter has more impact in the diversity of the topics and consequently more 

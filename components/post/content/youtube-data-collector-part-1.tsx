@@ -80,13 +80,13 @@ def format_information(video_list, name):
     text = '['
     for video in video_list['items']:
         info = video['id']
-        text += '{\n'
-        text += '"' + 'ID": ' + '"' + str(info['videoId']) + '",\n'
+        text += '{\\n'
+        text += '"' + 'ID": ' + '"' + str(info['videoId']) + '",\\n'
         info = video['snippet']
-        text += '"' + 'Title": ' + '"' + str(info['title']) + '",\n'
-        text += '"' + 'Channel": ' + '"' + str(info['channelTitle']) + '",\n'
-        text += '"' + 'Date": ' + '"' + str(info['publishedAt']) + '",\n'
-        text += '"' + 'Description": ' + '"' + str(info['description']) + '",\n},\n'
+        text += '"' + 'Title": ' + '"' + str(info['title']) + '",\\n'
+        text += '"' + 'Channel": ' + '"' + str(info['channelTitle']) + '",\\n'
+        text += '"' + 'Date": ' + '"' + str(info['publishedAt']) + '",\\n'
+        text += '"' + 'Description": ' + '"' + str(info['description']) + '",\\n},\\n'
     text += ']'
     with open('database/videos/'+name+'.json', 'w', encoding="utf8") as file:
         file.write(text)
@@ -109,10 +109,10 @@ const post = {
         {
             subtitle: 'Introduction',
             paragraphs: [
-                <>In this article, I'll show you how to use the Youtube API to collect videos and comments 
+                <>In this article, I&apos;ll show you how to use the Youtube API to collect videos and comments 
                 data.</>,
 
-                <>Nowadays, it's common to see analyzes with Twitter data, since the 
+                <>Nowadays, it&apos;s common to see analyzes with Twitter data, since the 
                 <LinkCustom link="https://temas.folha.uol.com.br/gps-ideologico/" text="Folha SP's ideological GPS" /> 
                 to the 
                 <LinkCustom link='https://politoscope.org/' text='Politoscope project in France.' />
@@ -121,19 +121,19 @@ const post = {
                 cognitive science event 2019 at Unicamp.</>,
 
                 <>My experience in the field is more related the politics, but you can find many uses for 
-                analysis of social media. In politics, it's common to use them to measure votes' intent, 
+                analysis of social media. In politics, it&apos;s common to use them to measure votes&apos; intent, 
                 political compass, and to see the narrative structure, in my case, I applied the LDA algorithm 
                 on Youtube comments to discover the topics more spoken during the election 2018.</>,
                 
                 <>An interesting point about this subject, which also is part of the goals of the Politoscope,
                 is to take knowledge about how these techniques work for the general public, many people 
-                already know that your data are collected, but don't know what the interested doing with 
+                already know that your data are collected, but don&apos;t know what the interested doing with 
                 these data, to bring the knowledge of how these techniques work can help on the debate 
                 about this subject.</>,
 
                 <>Before start, I need to highlight some limitations, in social media exists many paid 
                 profiles and robots producing fake news or artificial information that not correspond to most 
-                users' real opinions, they generally are used to improve the reputation of a politician and 
+                users&apos; real opinions, they generally are used to improve the reputation of a politician and 
                 destroy the reputation of your competitor. So case you will measure the intention of votes, 
                 the paid profiles and robots will influence the results.</>,
 
@@ -143,11 +143,11 @@ const post = {
                 not express agreement or disagreement.</>,
                 
                 <>For example, in a situation of tragedy is expected that most parts of the sentiment be 
-                negative, but it doesn't mean that they don't believe in the occurred fact. Another example is a 
+                negative, but it doesn&apos;t mean that they don&apos;t believe in the occurred fact. Another example is a 
                 little more polemic, occur when the public express negative sentiment with each other by thinks 
                 different about a specific subject, so not is possible to distinguish one opinion from the other.</>,
                 
-                <>In other words, the sentiment analysis doesn't consider the content of the message, so users with 
+                <>In other words, the sentiment analysis doesn&apos;t consider the content of the message, so users with 
                 different opinions can be grouped into a unique sentiment.</>,
 
                 <>If you want to read more about the challenges and difficulties of analyzing social media, you can 
@@ -162,25 +162,25 @@ const post = {
                 <>Now, the first thing to do is access 
                 <LinkCustom link='https://console.cloud.google.com/' text="Google's developer console," /> 
                 and log in using your 
-                Gmail, if it's your first time you will need to accept the terms and conditions.</>,
+                Gmail, if it&apos;s your first time you will need to accept the terms and conditions.</>,
 
-                <>Create a project by clicking on the New Project button, in this tutorial, we'll use the 
+                <>Create a project by clicking on the New Project button, in this tutorial, we&apos;ll use the 
                 default information, but you can edit if want, how name, organization, etc. Then click on 
-                credentials, and after it click on create credentials. Will appear some options, we'll to 
+                credentials, and after it click on create credentials. Will appear some options, we&apos;ll to 
                 use the most simple, select the API Key option.</>,
 
-                <>Now, we'll active the API to access the Youtube Data API v3 service, click on dashboard, 
-                and after it click on enable API and services. You'll be directed to the search page, search 
+                <>Now, we&apos;ll active the API to access the Youtube Data API v3 service, click on dashboard, 
+                and after it click on enable API and services. You&apos;ll be directed to the search page, search 
                 by Youtube Data API v3, and click on this service, and after it clicks on enable.</>,
 
-                <>You'll need to download the 
+                <>You&apos;ll need to download the 
                 <LinkCustom link='https://developers.google.com/youtube/v3/quickstart/python' 
                     text="API's library" /> 
                 on your machine, to do it types:</>,
 
                 codes[0],
 
-                <>You're now ready to use the API, create a file, and import the library in your code, 
+                <>You&apos;re now ready to use the API, create a file, and import the library in your code, 
                 types:</>,
 
                 codes[1],
@@ -198,7 +198,7 @@ const post = {
                 second parameter I used in my research to separate the samples per year.</>,
 
                 <>This function returns many data about the video found, if you want only some specific 
-                information about the video you can set the parameter called 'part', access the 
+                information about the video you can set the parameter called &apos;part&apos;, access the 
                 <LinkCustom link='https://developers.google.com/youtube/v3/docs/search/list' 
                     text='documentation,' /> 
                 and look at the properties name returned by API to choose a valid value for 
@@ -206,21 +206,21 @@ const post = {
                 like title and video id.</>,
 
                 <>The publishedAfter and the publishedBefore parameters define the period, in this case, 
-                we'll look for videos published in the period for 1 Jan of 2018 to the 31 Dez of 2018. The 
+                we&apos;ll look for videos published in the period for 1 Jan of 2018 to the 31 Dez of 2018. The 
                 order parameter defines if the function returns the videos more seen or more relevant, this 
                 parameter accepts other values, in the documentation show other valid values and what each 
                 one means. I chose the more seen (viewCount) because generally, it has more comments.</>,
                 
                 <>The maxResults parameter defines the maximum number of data that can be returned by the 
-                function, the maximum value allows is 50, but it's possible to collect more than 50 putting 
-                the function in a loop, we'll do it when we collect the video's comments because the videos 
-                have more comments than the maxResults' limit allow us to collect.</>,
+                function, the maximum value allows is 50, but it&apos;s possible to collect more than 50 putting 
+                the function in a loop, we&apos;ll do it when we collect the video&apos;s comments because the videos 
+                have more comments than the maxResults&apos; limit allow us to collect.</>,
 
                 <>For each video that it returns, the data are following format:</>,
                 
                 codes[4],
 
-                <>Now, we'll select the information that we want and put it in a JSON file.</>,
+                <>Now, we&apos;ll select the information that we want and put it in a JSON file.</>,
 
                 codes[5],
 
@@ -228,7 +228,7 @@ const post = {
                 want and stores it in a string, after it we put the code in a loop to go through the list of 
                 50 videos returned by the API.</>,
 
-                <>After implementing the functions, we'll write a code to call them.</>,
+                <>After implementing the functions, we&apos;ll write a code to call them.</>,
 
                 codes[6],
 
@@ -237,8 +237,8 @@ const post = {
 
                 <>The code is available on 
                 <LinkCustom link='https://github.com/tsukasarenato/youtube-data-collector' text='my Github,' /> 
-                so far we collect the videos data, in the next, we'll 
-                collect the video's comments.</>
+                so far we collect the videos data, in the next, we&apos;ll 
+                collect the video&apos;s comments.</>
             ]
         }
     ]
@@ -346,7 +346,7 @@ const post_pt = {
                 segundo parâmetro que usei em minha pesquisa para separar as amostras por ano.</>,
 
                 <>Esta função retorna muitos dados sobre o vídeo encontrado, se você quiser apenas 
-                algumas informações específicas sobre o vídeo você pode definir o parâmetro chamado 'parte', 
+                algumas informações específicas sobre o vídeo você pode definir o parâmetro chamado &apos;parte&apos;, 
                 acesse a 
                 <LinkCustom link='https://developers.google.com/youtube/v3/docs/search/list' 
                     text='documentação,' /> 

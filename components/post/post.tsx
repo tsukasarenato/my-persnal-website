@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 import { Pagination } from './pagination'
 
 type PostProps = {
@@ -26,12 +27,12 @@ const Post = ({title, image, content, locale, next, previous} : PostProps) => {
             <Image src={image} alt="kim kataguiri" />
           </div>
           {content.map(content => (
-            <>
+            <React.Fragment key={content.subtitle}>
             <div className='flex justify-center'>
               <h1 className='text-xl font-medium text-center'>{ content.subtitle }</h1>
             </div>
-            {content.paragraphs.map(paragraph => (
-                <>
+            {content.paragraphs.map((paragraph, index) => (
+                <React.Fragment key={index}>
                 {typeof paragraph === 'string' ?
                   <div className='flex justify-start bg-slate-200 p-4'>
                     <p className='whitespace-pre-wrap break-all'>{ paragraph }</p>
@@ -41,9 +42,9 @@ const Post = ({title, image, content, locale, next, previous} : PostProps) => {
                     <p className='text-justify'>{ paragraph }</p>
                   </div>
                 }
-                </>
+                </React.Fragment>
             ))}
-            </>
+            </React.Fragment>
           ))}
           <Pagination next={next} previous={previous} locale={locale} />
         </div>

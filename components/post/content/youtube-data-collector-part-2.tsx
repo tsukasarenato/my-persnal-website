@@ -69,7 +69,7 @@ def write_json_file(comments, name):
 
         if 'replies' in item.keys():
             replies = item["replies"]["comments"]
-            text += '\nreplies: \n'
+            text += '\\nreplies: \\n'
 
             for reply in replies:
                 text += 'author: ' + reply["snippet"]['authorDisplayName'] + '\\n'
@@ -104,23 +104,23 @@ const post = {
         {
             subtitle: 'Create a function to collect the comments',
             paragraphs: [
-                <>Google's API, just like other APIs, has a limit of daily requests, to access and to 
+                <>Google&apos;s API, just like other APIs, has a limit of daily requests, to access and to 
                 see your limit and to go along your use get in on 
                 <LinkCustom link='https://console.cloud.google.com/' 
                 text="Google's developer console" /> 
                 and in 
-                the page's bottom end click Youtube Data API v3, you will be directed to the API's 
+                the page&apos;s bottom end click Youtube Data API v3, you will be directed to the API&apos;s 
                 page. After it, in the sidebar menu click Quotas.</>,
 
                 <>A video may have from 10 to more than 30 thousand comments, so worth it to take a 
                 look at your daily use after using the API.</>,
 
-                <>Now, we'll implement the function in a separate file, so let's start by importing the 
-                API's library.</>,
+                <>Now, we&apos;ll implement the function in a separate file, so let&apos;s start by importing the 
+                API&apos;s library.</>,
 
                 codes[0],
 
-                <>After it, let's implement the function.</>,
+                <>After it, let&apos;s implement the function.</>,
 
                 codes[1],
 
@@ -129,18 +129,18 @@ const post = {
                 properties in the 
                 <LinkCustom link='https://developers.google.com/youtube/v3/docs/search/list' 
                     text='documentation.' />  
-                For our case, let's use the snippet and the replies 
-                that contain the message's content and the other information such as likes, published 
+                For our case, let&apos;s use the snippet and the replies 
+                that contain the message&apos;s content and the other information such as likes, published 
                 date, etc.</>,
 
                 <>I chose to collect the comment responses, to increase our samples and so we have more 
                 content and keywords to analyze, this is a good thing, topic modeling work better with 
-                bigger samples. The API has a technical limitation that it doesn't collect the replies 
+                bigger samples. The API has a technical limitation that it doesn&apos;t collect the replies 
                 responses, so some times you go note that the number of comments collected is lower than 
-                the video's number of comments.</>,
+                the video&apos;s number of comments.</>,
 
-                <>Another parameter is the video_id, we use the video id to specify what video we'll 
-                collect the comments on, this id is found after ?v= on the video's site. For example, 
+                <>Another parameter is the video_id, we use the video id to specify what video we&apos;ll 
+                collect the comments on, this id is found after ?v= on the video&apos;s site. For example, 
                 the video id of 
                 <LinkCustom link='https://www.youtube.com/watch?v=bM7SZ5SBzyY&ab_channel=NoCopyrightSounds' 
                     text='https://www.youtube.com/watch?v=bM7SZ5SBzyY&ab_channel=NoCopyrightSounds' /> 
@@ -156,8 +156,8 @@ const post = {
         {
             subtitle: 'Storing the comments in a file',
             paragraphs: [
-                <>To store the comments in a file, we'll use the same logic as we used in part 1, let's 
-                select the fields we want and write it in a JSON file. For this, let's know the structure 
+                <>To store the comments in a file, we&apos;ll use the same logic as we used in part 1, let&apos;s 
+                select the fields we want and write it in a JSON file. For this, let&apos;s know the structure 
                 of the data returned, observe below.</>,
 
                 codes[2],
@@ -172,7 +172,7 @@ const post = {
                 remains unchanged. The updatedAt field show when was realized the last modification, 
                 and the publishedAt field when was published.</>,
 
-                <>From the information returned, we'll select the author current name 
+                <>From the information returned, we&apos;ll select the author current name 
                 (authorDisplayName), the comments current text (textDisplay), last update date 
                 (updateAt), and the number of likes (likeCount). Observe the function below.</>,
 
@@ -184,12 +184,12 @@ const post = {
             paragraphs: [
                 codes[4],
 
-                <>The page_token variable has the current page token, in start it's empty pointing for 
+                <>The page_token variable has the current page token, in start it&apos;s empty pointing for 
                 the fist page, so the function return the first page of comments, after it, we use the 
                 nextPageToken for the function collect next page comments, lastly we put this code that 
                 is using the nexPageToken in a loop, that way it collects the comments of all the 
                 pages. In last page, it returns a token invalid and raise a KeyError error, when this 
-                occurs mean that there isn't next page, so the algorithm ends the loop.</>,
+                occurs mean that there isn&apos;t next page, so the algorithm ends the loop.</>,
 
                 <>The code is available on my github and some times I update it. Feel free to edit the 
                 code adapting it the your needs.</>
