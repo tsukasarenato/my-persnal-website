@@ -174,7 +174,8 @@ const post = {
                 by Youtube Data API v3, and click on this service, and after it clicks on enable.</>,
 
                 <>You'll need to download the 
-                <LinkCustom link='https://developers.google.com/youtube/v3/quickstart/python' text="API's library" /> 
+                <LinkCustom link='https://developers.google.com/youtube/v3/quickstart/python' 
+                    text="API's library" /> 
                 on your machine, to do it types:</>,
 
                 codes[0],
@@ -198,7 +199,8 @@ const post = {
 
                 <>This function returns many data about the video found, if you want only some specific 
                 information about the video you can set the parameter called 'part', access the 
-                <LinkCustom link='https://developers.google.com/youtube/v3/docs/search/list' text='documentation,' /> 
+                <LinkCustom link='https://developers.google.com/youtube/v3/docs/search/list' 
+                    text='documentation,' /> 
                 and look at the properties name returned by API to choose a valid value for 
                 this parameter. In this case, the snippet property returns us the information that we need, 
                 like title and video id.</>,
@@ -304,7 +306,8 @@ const post_pt = {
             subtitle: 'Gerando credenciais para acessar a API',
             paragraphs: [
                 <>Agora, a primeira coisa a fazer é acessar o 
-                <LinkCustom link='https://console.cloud.google.com/' text="console do desenvolvedor do Google," /> 
+                <LinkCustom link='https://console.cloud.google.com/' 
+                text="console do desenvolvedor do Google," /> 
                 e fazer login usando o seu Gmail. Se for a primeira vez, você precisará aceitar os termos e 
                 condições.</>,
 
@@ -318,7 +321,8 @@ const post_pt = {
                 procure por Youtube Data Api, clique nele e pronto.</>,
 
                 <>Você precisará baixar a 
-                <LinkCustom link='https://developers.google.com/youtube/v3/quickstart/python' text="biblioteca da API" />
+                <LinkCustom link='https://developers.google.com/youtube/v3/quickstart/python' 
+                    text="biblioteca da API" />
                 em sua máquina, para fazer isso digite no 
                 terminal:</>,
 
@@ -344,7 +348,8 @@ const post_pt = {
                 <>Esta função retorna muitos dados sobre o vídeo encontrado, se você quiser apenas 
                 algumas informações específicas sobre o vídeo você pode definir o parâmetro chamado 'parte', 
                 acesse a 
-                <LinkCustom link='https://developers.google.com/youtube/v3/docs/search/list' text='documentação,' /> 
+                <LinkCustom link='https://developers.google.com/youtube/v3/docs/search/list' 
+                    text='documentação,' /> 
                 e olhe o nome das propriedades retornadas pela API para escolher um 
                 valor válido para este parâmetro. Nesse caso, a propriedade snippet nos retorna as 
                 informações de que precisamos, como título e id do vídeo.</>,
