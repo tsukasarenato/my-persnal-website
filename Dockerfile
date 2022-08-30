@@ -1,19 +1,4 @@
-FROM node:16.17-alpine3.16
-
-WORKDIR /website
-
-COPY package.json .
-
-RUN npm install
-
-COPY . .
-
-RUN npm run build
-
-CMD ["npm", "start"]
-
-EXPOSE 3000
-FROM node:16.17-alpine3.16
+FROM node:alpine
 
 WORKDIR /app
 
@@ -23,8 +8,6 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
-
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
 
 EXPOSE 3000
